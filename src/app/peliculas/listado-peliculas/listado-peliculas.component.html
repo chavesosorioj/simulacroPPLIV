@@ -1,0 +1,18 @@
+<app-menu></app-menu>
+<div class="container">
+    <div class="">
+        <h1 class="display-3">Listado peliculas</h1>
+        <p>Haz click en mostrar peliculas y veras las que estan en cartelera</p>
+        <p><a class="btn btn-success " href="#" role="button">Mostrar peliculas »</a></p>
+
+        <app-tabla-pelicula></app-tabla-pelicula>
+        <!-- hacerlo como una tabla-->
+        <div *ngFor="let peliculas of listaPelicula">
+            <p>
+                Id: {{peliculas.id}} - Nombre: {{peliculas.nombre}} - Tipo: {{peliculas.tipo}}
+            </p>
+        </div>
+    </div>
+</div>
+
+

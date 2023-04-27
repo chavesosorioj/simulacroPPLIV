@@ -1,0 +1,22 @@
+<p>tabla-pelicula works!</p>
+
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Tipo</th>
+        <th>Fecha estreno</th>
+        <th>Cantidad publico</th>
+        <th>Foto</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let peliculas of listaPelicula">
+        <td>{{peliculas.nombre}}</td>
+        <td>{{peliculas.tipo}}</td>
+        <td>{{peliculas.fecha_estreno}}</td>
+        <td>{{peliculas.cantidad_publico}}</td>
+        <td>{{peliculas.foto_pelicula}}</td>
+      </tr>
+    </tbody>
+  </table>
