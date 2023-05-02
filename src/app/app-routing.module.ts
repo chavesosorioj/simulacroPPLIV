@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
-import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
-import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
+//import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
+//import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 
 

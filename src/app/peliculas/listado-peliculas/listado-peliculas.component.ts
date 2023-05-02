@@ -11,10 +11,17 @@ import { TablaPeliculaComponent } from 'src/app/componentes/tabla-pelicula/tabla
 })
 export class ListadoPeliculasComponent implements OnInit {
 
+  //tablaPeliculas: TablaPeliculaComponent | undefined; // el undefined es un quick fix que me agrego, VER SI LO SACO
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+
+  public peliculas: Pelicula[] = []
+ 
+ 
+ 
   //esto sacarlo de aca y llamar desde la clase - firebase
   listaPelicula = [
     { id: 0, nombre: 'movie 1', tipo: 'terror', this_fecha_estreno: '01-02-2023', this_cantidad_publico: 40, foto_pelicula: 'foto pelicula'},   
