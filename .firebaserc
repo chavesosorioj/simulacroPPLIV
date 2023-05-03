@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "simulacroprimerparcial-chaves": {
+      "hosting": {
+        "primerParcialPractica": [
+          "simulacroprimerparcial-chaves"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "simulacroprimerparcial-chaves"
+  }
+}
