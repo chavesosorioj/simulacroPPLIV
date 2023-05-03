@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-//import { Pelicula } from 'src/app/clases/pelicula';
+import { Pelicula } from 'src/app/clases/pelicula';
+import { PeliculaService } from 'src/app/servicios/pelicula.service';
 
 @Component({
   selector: 'app-tabla-pelicula',
@@ -8,22 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TablaPeliculaComponent implements OnInit {
 
+  peliculas: Pelicula[] = [];
 
-  constructor() {
-
-   
-   }
+  constructor(private bd: PeliculaService) {}
 
   ngOnInit(): void {
+    this.bd.getPeliculas().subscribe((data) => {
+      data.forEach((pelicula) => {
+        if(!this.peliculas.includes(pelicula))
+          this.peliculas.push(pelicula);
+      })
+    });
   }
 
       // lista hardcodeada
-      listaPelicula = [
-        { id: 0, nombre: 'movie 1', tipo: 'terror', fecha_estreno: '01-02-2023', 
-          cantidad_publico: 40, foto_pelicula: 'foto pelicula'},   
-        { id: 1, nombre: 'movie 2', tipo: 'comedia', fecha_estreno: '01-03-2023', 
-          cantidad_publico: 30, foto_pelicula: 'foto pelicula'},   
-        { id: 2, nombre: 'movie 3', tipo: 'romantica', fecha_estreno: '01-04-2023', 
-          cantidad_publico: 20, foto_pelicula: 'foto pelicula'},     
-    ];
+    //   listaPelicula = [
+    //     { id: 0, nombre: 'movie 1', tipo: 'terror', fecha_estreno: '01-02-2023', 
+    //       cantidad_publico: 40, foto_pelicula: 'foto pelicula'},   
+    //     { id: 1, nombre: 'movie 2', tipo: 'comedia', fecha_estreno: '01-03-2023', 
+    //       cantidad_publico: 30, foto_pelicula: 'foto pelicula'},   
+    //     { id: 2, nombre: 'movie 3', tipo: 'romantica', fecha_estreno: '01-04-2023', 
+    //       cantidad_publico: 20, foto_pelicula: 'foto pelicula'},     
+    // ];
 }
