@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
-import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 import { AppRoutingModule } from './app-routing.module';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { ShareModule } from './share/share.module';
@@ -26,7 +26,11 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ShareModule, provideFirebaseApp(() => initializeApp(environment.firebase)), provideAuth(() => getAuth()), provideDatabase(() => getDatabase()), provideFirestore(() => getFirestore()),
+    ShareModule, 
+    provideFirebaseApp(() => initializeApp(environment.firebase)), 
+    provideAuth(() => getAuth()), 
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
   ],
   providers: [],
   bootstrap: [AppComponent]
