@@ -2,17 +2,31 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
-import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
-import { BusquedaComponent } from './busqueda/busqueda.component';
 import { AppRoutingModule } from './app-routing.module';
-import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 import { ShareModule } from './share/share.module';
-import { LoginComponent } from './componentes/login/login.component';
+
+
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { provideDatabase,getDatabase } from '@angular/fire/database';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+
+
+
+
+
+//van aca? LOS SACO PORQUE ENTIENDO QUE NO SE USAN EN EL APP.MODULE
+import { DetallePeliculaComponent } from './componentes/detalle-pelicula/detalle-pelicula.component';
+import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
+import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { TablaPeliculaComponent } from './componentes/tabla-pelicula/tabla-pelicula.component';
+import { ListadoPeliculasComponent } from './componentes/peliculas/listado-peliculas/listado-peliculas.component';
+import { AltaPeliculasComponent } from './componentes/peliculas/alta-peliculas/alta-peliculas.component';
+import { AltaActoresComponent } from './actores/alta-actores/alta-actores.component';
+import { ModificarPeliculaComponent } from './componentes/modificar-pelicula/modificar-pelicula.component';
+import { BorrarPeliculaComponent } from './componentes/borrar-pelicula/borrar-pelicula.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +35,13 @@ import { provideFirestore,getFirestore } from '@angular/fire/firestore';
     BusquedaComponent,
     BienvenidoComponent,
     LoginComponent,
-   // MenuComponent
+    TablaPeliculaComponent,
+    ListadoPeliculasComponent,
+    AltaPeliculasComponent,
+    AltaPeliculasComponent,
+    ModificarPeliculaComponent,
+    BorrarPeliculaComponent
+
   ],
   imports: [
     BrowserModule,
