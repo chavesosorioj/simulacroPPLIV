@@ -1,11 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FooterComponent } from '../../share/footer/footer.component';
-import { MenuComponent } from '../../share/menu/menu.component';
-import { TablaPeliculaComponent } from '../tabla-pelicula/tabla-pelicula.component';
-import { DetallePeliculaComponent } from '../detalle-pelicula/detalle-pelicula.component';
-// Y FALTARIA BORRAR Y MODIFICAR
-
-
+import { Pelicula } from 'src/app/clases/pelicula';
 
 @Component({
   selector: 'app-busqueda',
@@ -13,10 +7,16 @@ import { DetallePeliculaComponent } from '../detalle-pelicula/detalle-pelicula.c
   styleUrls: ['./busqueda.component.css']
 })
 export class BusquedaComponent implements OnInit {
+  datos?: Pelicula = undefined;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  mostrarDatosPelicula(pelicula: Pelicula){
+    console.log(this.datos);
+    this.datos = pelicula;
   }
 
 }

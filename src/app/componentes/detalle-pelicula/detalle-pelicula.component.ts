@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Pelicula } from 'src/app/clases/pelicula';
 
 @Component({
   selector: 'app-detalle-pelicula',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalle-pelicula.component.css']
 })
 export class DetallePeliculaComponent implements OnInit {
+  @Input() pelicula?: Pelicula;
 
   constructor() { }
 
@@ -13,3 +15,17 @@ export class DetallePeliculaComponent implements OnInit {
   }
 
 }
+
+
+// puede que necesite algo asi.
+// @Input() peliculaDetalle: Pelicula;
+// @Output() onPeliculaADetalle:EventEmitter<boolean>= new EventEmitter(); 
+
+// constructor() { }
+
+// ngOnInit(): void {
+// }
+// limpiar(peliculaDetalle:boolean){
+//   this.onPeliculaADetalle.emit(peliculaDetalle);
+// }
+// }

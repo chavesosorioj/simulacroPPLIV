@@ -6,8 +6,8 @@
         <!-- <p>Haz click en mostrar peliculas y veras las que estan en cartelera</p>
         <p><a class="btn btn-success " href="#" role="button">Mostrar peliculas »</a></p> -->
         
-        <!-- child component-->
-        <app-tabla-pelicula></app-tabla-pelicula>
+        <!-- child component este tiene que tener un evento-->
+        <app-tabla-pelicula  (mostrarPelicula)="mostrarDatosPelicula($event)"></app-tabla-pelicula>
         
         <div class="container">
             <!-- Example row of columns -->
@@ -20,7 +20,8 @@
               </div>
               <div class="col-md-4 mt-2">
                 <h2>Mostrar</h2>
-                <p>dummy text</p>
+                <app-detalle-pelicula [pelicula]="datos"></app-detalle-pelicula>
+                
                 <p><a class="btn btn-secondary" href="#" role="button">Limpiar »</a></p>
               </div>
               <div class="col-md-4 mt-2">

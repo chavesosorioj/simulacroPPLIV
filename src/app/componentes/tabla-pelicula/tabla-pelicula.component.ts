@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Pelicula } from 'src/app/clases/pelicula';
 import { PeliculaService } from 'src/app/servicios/pelicula.service';
+import { Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-tabla-pelicula',
@@ -10,6 +11,8 @@ import { PeliculaService } from 'src/app/servicios/pelicula.service';
 export class TablaPeliculaComponent implements OnInit {
 
   peliculas: Pelicula[] = [];
+  @Output() mostrarPelicula = new EventEmitter<Pelicula>();
+
 
   constructor(private bd: PeliculaService) {}
 
@@ -21,5 +24,12 @@ export class TablaPeliculaComponent implements OnInit {
       })
     });
   }
+
+  mostrarDatosPelicula(item: Pelicula){
+    console.log(item);
+    this.mostrarPelicula.emit(item)
+  }
+
+
 
 }
