@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ShareModule } from './share/share.module';
+import { FormsModule } from '@angular/forms';
 
 
 import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
@@ -41,12 +42,12 @@ import { BorrarPeliculaComponent } from './componentes/borrar-pelicula/borrar-pe
     AltaPeliculasComponent,
     ModificarPeliculaComponent,
     BorrarPeliculaComponent
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    ShareModule, 
+    ShareModule,
+    FormsModule, 
     provideFirebaseApp(() => initializeApp(environment.firebase)), 
     provideAuth(() => getAuth()), 
     provideDatabase(() => getDatabase()),

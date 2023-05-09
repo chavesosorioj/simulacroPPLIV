@@ -17,15 +17,3 @@ export class DetallePeliculaComponent implements OnInit {
 }
 
 
-// puede que necesite algo asi.
-// @Input() peliculaDetalle: Pelicula;
-// @Output() onPeliculaADetalle:EventEmitter<boolean>= new EventEmitter(); 
-
-// constructor() { }
-
-// ngOnInit(): void {
-// }
-// limpiar(peliculaDetalle:boolean){
-//   this.onPeliculaADetalle.emit(peliculaDetalle);
-// }
-// }

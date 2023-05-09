@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { PeliculaService } from 'src/app/servicios/pelicula.service';
+import { Pelicula } from 'src/app/clases/pelicula';
 
 
 @Component({
@@ -9,12 +9,9 @@ import { PeliculaService } from 'src/app/servicios/pelicula.service';
 })
 export class BorrarPeliculaComponent implements OnInit {
 
-valor ='';
-  @Input() valorTablaPeliculaPADRE:any;
-  //creo que esto deberia ser una pelicula
-  @Output() cambio = new EventEmitter<string>();
+  @Input() pelicula?: Pelicula;
 
-  constructor(private bd: PeliculaService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

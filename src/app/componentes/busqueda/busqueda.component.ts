@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Pelicula } from 'src/app/clases/pelicula';
+import { PeliculaService } from 'src/app/servicios/pelicula.service';
 
 @Component({
   selector: 'app-busqueda',
@@ -9,7 +10,7 @@ import { Pelicula } from 'src/app/clases/pelicula';
 export class BusquedaComponent implements OnInit {
   datos?: Pelicula = undefined;
 
-  constructor() { }
+  constructor(private db:PeliculaService) { }
 
   ngOnInit(): void {
   }
@@ -17,6 +18,11 @@ export class BusquedaComponent implements OnInit {
   mostrarDatosPelicula(pelicula: Pelicula){
     console.log(this.datos);
     this.datos = pelicula;
+  }
+
+
+  modificarPeliculaB(pelicula:Pelicula){
+    console.log(pelicula);
   }
 
 }

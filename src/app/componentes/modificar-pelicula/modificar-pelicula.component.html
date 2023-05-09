@@ -1,1 +1,14 @@
-<p>modificar-pelicula works!</p>
+<h3>Modificar</h3>
+<div *ngIf="peliculaMod !== undefined">
+    <p>Desea modificar la pelicula <strong>{{peliculaMod.nombre}}?</strong></p>
+    <p><span>Nombre <input type="text" class="form-control" [(ngModel)]="newPelicula.nombre"></span></p>
+    <p><span>Tipo <input type="text" class="form-control" [(ngModel)]="newPelicula.tipo"></span></p>
+    <p><span>Fecha de estreno <input class="form-control" type="text" [(ngModel)]="newPelicula.fecha_estreno"></span></p>
+    <p><span>Cantidad de publico <input class="form-control" type="text" [(ngModel)]="newPelicula.cantidad_publico"></span></p>
+
+    <button><a class="btn btn-secondary" (click)="modificarPelicula(newPelicula)">Guardar cambios »</a></button>
+</div>
+    
+
+
+

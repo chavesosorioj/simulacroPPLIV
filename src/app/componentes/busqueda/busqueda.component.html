@@ -2,7 +2,8 @@
 <app-menu></app-menu>
 <div class="container">
     <div class="">
-        <h1 class="display-3 m-5">Listado de peliculas</h1>
+        <h1 class="display-3 m-4">Listado de peliculas</h1>
+        <p>Seleccione la pelicula que desea modificar, mostrar o borrar</p>
         <!-- <p>Haz click en mostrar peliculas y veras las que estan en cartelera</p>
         <p><a class="btn btn-success " href="#" role="button">Mostrar peliculas »</a></p> -->
         
@@ -13,25 +14,29 @@
             <!-- Example row of columns -->
             <div class="row">
               <div class="col-md-4 mt-2">
-                <h2>Borrar</h2>
-                <app-borrar-pelicula></app-borrar-pelicula>
-                <p>dummy text</p>
-                <p><a class="btn btn-secondary" href="#" role="button">Borrar »</a></p>
+                <app-borrar-pelicula [pelicula]="datos"></app-borrar-pelicula>
               </div>
               <div class="col-md-4 mt-2">
-                <h2>Mostrar</h2>
                 <app-detalle-pelicula [pelicula]="datos"></app-detalle-pelicula>
-                
-                <p><a class="btn btn-secondary" href="#" role="button">Limpiar »</a></p>
               </div>
               <div class="col-md-4 mt-2">
-                <h2>Modificar</h2>
-                <app-modificar-pelicula></app-modificar-pelicula>
-                <p>dummy text</p>
-                <p><a class="btn btn-secondary" href="#" role="button">Guardar cambios »</a></p>
+                <app-modificar-pelicula [peliculaMod]="datos" (peliculaModificada)="modificarPeliculaB($event)"></app-modificar-pelicula>
               </div>
             </div>
           </div>
     </div>
 </div>
-<app-footer></app-footer>
+<!-- <app-footer></app-footer> -->
+
+
+<!-- <div class="col-md-4">
+
+    <app-borrar-pelicula  [peliculaDetalle]="peliculaDetalle" (onPeliculaABorrar)="peliculaABorrar($event)"></app-borrar-pelicula>
+</div>
+<div class="col-md-4">
+
+    <app-detalle-pelicula [peliculaDetalle]="peliculaDetalle" (onPeliculaADetalle)="peliculaAVer($event)"></app-detalle-pelicula>
+</div>
+<div class="col-md-4">
+
+    <app-modificar-pelicula [peliculaDetalle]="peliculaDetalle" (onPeliculaAModifica)="peliculaAModificar($event)"></app-modificar-pelicula> -->
