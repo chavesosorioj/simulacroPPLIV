@@ -22,7 +22,12 @@ export class BusquedaComponent implements OnInit {
 
 
   modificarPeliculaB(pelicula:Pelicula){
-    console.log(pelicula);
+    if(this.datos!== undefined){
+      pelicula.id = this.datos.id;
+      this.db.modificar(pelicula, this.datos.id);
+      console.log(pelicula);
+    }
+
   }
 
 }

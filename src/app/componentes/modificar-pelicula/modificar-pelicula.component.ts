@@ -20,7 +20,7 @@ export class ModificarPeliculaComponent implements OnInit {
   }
 
   modificarPelicula(newPelicula: Pelicula){
-    console.log(newPelicula);
+    // console.log(newPelicula);
     this.peliculaModificada.emit(newPelicula)
   }
 

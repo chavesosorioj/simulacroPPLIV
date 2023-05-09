@@ -39,7 +39,12 @@ export class PeliculaService {
   modificar(pelicula: Pelicula, id:string){
     // const coleccion = collection(this.firestore, 'peliculas');
     const documento = doc(collection(this.firestore, 'peliculas'), id);
-    updateDoc(documento, {pelicula});
+    updateDoc(documento, {
+      'nombre': pelicula.nombre,
+      'tipo': pelicula.tipo,
+      'fecha_estreno': pelicula.fecha_estreno,
+      'cantidad_publico': pelicula.cantidad_publico
+    });
   }
 
   eliminar(id: string){
