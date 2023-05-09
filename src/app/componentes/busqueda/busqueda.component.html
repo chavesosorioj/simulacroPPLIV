@@ -14,7 +14,7 @@
             <!-- Example row of columns -->
             <div class="row">
               <div class="col-md-4 mt-2">
-                <app-borrar-pelicula [pelicula]="datos"></app-borrar-pelicula>
+                <app-borrar-pelicula [peliculaB]="datos"  (peliculaBorrada)="borrarPeliculaB($event)"></app-borrar-pelicula>
               </div>
               <div class="col-md-4 mt-2">
                 <app-detalle-pelicula [pelicula]="datos"></app-detalle-pelicula>

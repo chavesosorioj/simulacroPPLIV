@@ -1,6 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pelicula } from 'src/app/clases/pelicula';
-import { PeliculaService } from 'src/app/servicios/pelicula.service';
 
 @Component({
   selector: 'app-modificar-pelicula',
@@ -14,7 +13,7 @@ export class ModificarPeliculaComponent implements OnInit {
   @Output() peliculaModificada:EventEmitter<Pelicula> = new EventEmitter(); // nombre del evento
 
 
-  constructor(private bd: PeliculaService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }

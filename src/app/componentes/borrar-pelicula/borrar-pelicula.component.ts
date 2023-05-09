@@ -9,11 +9,15 @@ import { Pelicula } from 'src/app/clases/pelicula';
 })
 export class BorrarPeliculaComponent implements OnInit {
 
-  @Input() pelicula?: Pelicula;
+  @Input() peliculaB:undefined | Pelicula;
+  @Output() peliculaBorrada:EventEmitter<Pelicula> = new EventEmitter(); // nombre del evento
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  borrarPelicula(peliculaB:Pelicula){
+    this.peliculaBorrada.emit(peliculaB);
+  }
 }

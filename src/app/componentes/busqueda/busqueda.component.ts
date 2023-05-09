@@ -30,4 +30,9 @@ export class BusquedaComponent implements OnInit {
 
   }
 
+  borrarPeliculaB(pelicula:Pelicula){
+    // console.log(pelicula.id);
+    this.db.eliminar(pelicula.id);
+  }
+
 }

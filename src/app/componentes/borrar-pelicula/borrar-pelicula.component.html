@@ -1,2 +1,6 @@
 <h3>Borrar</h3>
-<p><a class="btn btn-secondary" href="#" role="button">Borrar »</a></p>
+<div *ngIf="peliculaB !== undefined">
+    <p>Desea borrar la pelicula <strong>{{peliculaB.nombre}}</strong> ?</p>
+    <button><a class="btn btn-secondary" (click)="borrarPelicula(peliculaB)">Borrar »</a></button>
+</div>
+
