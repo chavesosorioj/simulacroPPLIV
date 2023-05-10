@@ -19,11 +19,14 @@ export class MenuComponent implements OnInit {
     listadoPelicula(){
       this.rutas.navigate(['peliculas/listado-peliculas']);
     }
+    busquedaPelicula(){
+      this.rutas.navigate(['busqueda']);
+    }
 
     altaActores(){
-      this.rutas.navigate(['peliculas/alta-actores']);
+      this.rutas.navigate(['actores/alta-actores']);
     }
     listadoActores(){
-      this.rutas.navigate(['peliculas/listado-actores']);
+      this.rutas.navigate(['actores/listado-actores']);
     }
 }

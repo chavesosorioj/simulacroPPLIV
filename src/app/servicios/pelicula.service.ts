@@ -28,10 +28,10 @@ export class PeliculaService {
         cantidad_publico: pelicula.cantidad_publico
       })
       .then((docRef) => {
-        console.log('Persona agregada con ID:', docRef.id);
+        console.log('Pelicula agregada con ID:', docRef.id);
       })
       .catch((error) => {
-        console.error('Error al agregar persona:', error);
+        console.error('Error al agregar pelicula:', error);
       });
       
   }
@@ -45,6 +45,7 @@ export class PeliculaService {
       'fecha_estreno': pelicula.fecha_estreno,
       'cantidad_publico': pelicula.cantidad_publico
     });
+    //mod los datos especificos
   }
 
   eliminar(id: string){

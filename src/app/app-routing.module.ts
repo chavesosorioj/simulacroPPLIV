@@ -4,18 +4,12 @@ import { CommonModule } from '@angular/common';
 import { BusquedaComponent } from './componentes/busqueda/busqueda.component';
 import { BienvenidoComponent } from './componentes/bienvenido/bienvenido.component';
 
-import { ListadoActoresComponent } from './actores/listado-actores/listado-actores.component';
-import { AltaActoresComponent } from './actores/alta-actores/alta-actores.component';
+// import { ListadoActoresComponent } from './actores/listado-actores/listado-actores.component';
+// import { AltaActoresComponent } from './actores/alta-actores/alta-actores.component';
 
 import { ListadoPeliculasComponent } from './componentes/peliculas/listado-peliculas/listado-peliculas.component';
 import { AltaPeliculasComponent } from './componentes/peliculas/alta-peliculas/alta-peliculas.component';
 
-
-
-// {path:'juego', component:JuegosComponent, children:[
-//   //{path:'tateti',component:TatetiComponent}, VER QUE OTRO CHILDEN LE PONGO
-//   {path:'**',component:NotFoundComponent}
-// ]},
 
 //NO ESTOY SEGURA DE DEJARLO ASI, NO DEBERIAN TENER CHILDS?
 //actores quedo como un modulo, lo deberia cambiar para que quede igual que peliculas
