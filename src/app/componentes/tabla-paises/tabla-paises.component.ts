@@ -11,6 +11,7 @@ import { collectionSnapshots } from '@angular/fire/firestore';
 export class TablaPaisesComponent implements OnInit {
 
   paises:Array<Pais>=[];
+  slicePaises:Array<Pais>=[];
   paisSeleccionado:any|Pais;
   newPais:Pais =new Pais('','');
 
@@ -21,6 +22,7 @@ export class TablaPaisesComponent implements OnInit {
   }
 
   cargarPaises(){
+
     this.paisS.getPaises().subscribe((data)=>{
       for(let i=0; data.length>i;i++){
         // console.log(data[i].name.common);
@@ -32,7 +34,7 @@ export class TablaPaisesComponent implements OnInit {
         this.paises.push(this.newPais);
       }
     });
-    // console.log(this.paises);
+    console.log(this.paises);
 
   }
 }
