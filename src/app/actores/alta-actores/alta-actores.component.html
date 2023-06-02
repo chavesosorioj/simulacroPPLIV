@@ -1,64 +1,67 @@
 <app-menu></app-menu>
-<!-- <div class="input-group input-group-sm mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-sm">Small</span>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-  </div>
-  
-  <div class="input-group mb-3">
-    <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
-    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
-  </div> -->
-<div class="container mb-3">
-    <form class="row g-3 needs-validation" novalidate>
-        <div class="col-md-4">
+
+<div class="container mt-3">
+
+  <h1>Alta actor</h1>
+  <div class="row">
+
+    <!-- form actores -->
+    <div class="col-md-6">
+      <form class="row g-3 needs-validation" [formGroup]="formAlta" (ngSubmit)="submitForm()" novalidate>
+
+        <div class="col-md-6">
           <label for="validationCustom01" class="form-label">Nombre</label>
-          <input type="text" class="form-control" id="validationCustom01" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
-        </div>
-        <div class="col-md-4">
-          <label for="validationCustom02" class="form-label">Apellido</label>
-          <input type="text" class="form-control" id="validationCustom02" required>
-          <div class="valid-feedback">
-            Looks good!
-          </div>
+          <input type="text" class="form-control" formControlName="nombre">
+          <span *ngIf="formAlta.get('nombre')?.hasError('required') && formAlta.get('nombre')?.touched" class="text-danger">
+            El nombre es requerido.
+          </span>
+          <span *ngIf="formAlta.get('nombre')?.hasError('minlength') && formAlta.get('nombre')?.touched" class="text-danger">
+              Nombre como minimo debe tener 4 caracteres
+          </span>
+
         </div>
         <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">City</label>
-          <input type="text" class="form-control" id="validationCustom03" required>
+          <label for="validationCustom02" class="form-label">Apellido</label>
+          <input type="text" class="form-control" formControlName="apellido">
+          <span *ngIf="formAlta.get('apellido')?.hasError('required') && formAlta.get('apellido')?.touched" class="text-danger">
+            El apellido es requerido.
+          </span>
+          <span *ngIf="formAlta.get('nombre')?.hasError('minlength') && formAlta.get('nombre')?.touched" class="text-danger">
+            Apellido como minimo debe tener 4 caracteres
+        </span>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Ciudad</label>
+          <input type="text" class="form-control" formControlName="ciudad">
+          <span *ngIf="formAlta.get('ciudad')?.hasError('required') && formAlta.get('ciudad')?.touched" class="text-danger">
+            La ciudad es requerida.
+          </span>
+        </div>
+
+        <div class="col-md-6">
+            <label for="validationCustomUsername" class="form-label">Mail</label>
+            <div class="input-group has-validation">
+              <span class="input-group-text" id="inputGroupPrepend">@</span>
+              <input type="text" class="form-control" formControlName="mail" aria-describedby="inputGroupPrepend">
+              <span *ngIf="formAlta.get('mail')?.hasError('required') && formAlta.get('mail')?.touched" class="text-danger">
+                El mail es requerido.
+              </span>
+              <span *ngIf="formAlta.get('email')?.hasError('email')">
+                El correo electrónico no es válido.
+              </span>
+
+            </div>
+        </div>
+        <div class="col-md-6">
+          <label for="validationCustom03" class="form-label">Pais</label>
+          <div *ngIf="datosPais">
+            <p>{{datosPais.nombre}}</p>
+            <!-- <input type="text" {{datosPais.nombre}}> -->
+          </div>
           <div class="invalid-feedback">
             Please provide a valid city.
           </div>
         </div>
-
-        <div class="col-md-4">
-            <label for="validationCustomUsername" class="form-label">Mail</label>
-            <div class="input-group has-validation">
-              <span class="input-group-text" id="inputGroupPrepend">@</span>
-              <input type="text" class="form-control" id="validationCustomUsername" aria-describedby="inputGroupPrepend" required>
-              <div class="invalid-feedback">
-                Please choose a username.
-              </div>
-            </div>
-        </div>
-        <!-- <div class="col-md-3">
-          <label for="validationCustom04" class="form-label">State</label>
-          <select class="form-select" id="validationCustom04" required>
-            <option selected disabled value="">Choose...</option>
-            <option>...</option>
-          </select>
-          <div class="invalid-feedback">
-            Please select a valid state.
-          </div>
-        </div>
-        <div class="col-md-3">
-          <label for="validationCustom05" class="form-label">Zip</label>
-          <input type="text" class="form-control" id="validationCustom05" required>
-          <div class="invalid-feedback">
-            Please provide a valid zip.
-          </div>
-        </div> -->
         <div class="col-12">
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
@@ -70,12 +73,21 @@
             </div>
           </div>
         </div>
+
         <div class="col-12">
           <button class="btn btn-primary" type="submit">Submit form</button>
+          <!-- [disabled]="formAlta.invalid" -->
         </div>
     </form>
-</div>
+    </div>
 
-<app-tabla-paises class=" align-items-center"></app-tabla-paises>
+    <div class="col-md-6">
+      <!--       <app-tabla-paises
+                    [targetInputCHILD]="(sourceFromPARENT)" 
+                    (outputCHILD)="sourceFromPARENT($event)" 
+                  ></app-tabla-paises> -->
+      <app-tabla-paises (selecPais)="mostrarPais($event)" class=" align-items-center"></app-tabla-paises>
+    </div>
+
 
 <!-- <app-footer></app-footer> -->

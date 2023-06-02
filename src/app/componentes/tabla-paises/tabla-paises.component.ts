@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PaisesService } from 'src/app/servicios/paises.service';
 import { Pais } from 'src/app/clases/pais';
 import { collectionSnapshots } from '@angular/fire/firestore';
@@ -14,6 +14,7 @@ export class TablaPaisesComponent implements OnInit {
   slicePaises:Array<Pais>=[];
   paisSeleccionado:any|Pais;
   newPais:Pais =new Pais('','');
+  @Output() selecPais = new EventEmitter<Pais>();
 
   constructor(private paisS:PaisesService) { }
 
@@ -37,4 +38,11 @@ export class TablaPaisesComponent implements OnInit {
     console.log(this.paises);
 
   }
+
+  seleccionarPais(item: Pais){
+    console.log(item);
+    this.selecPais.emit(item);
+  }
+
+
 }

@@ -5,6 +5,7 @@ import { AltaActoresComponent } from './alta-actores/alta-actores.component';
 import { ListadoActoresComponent } from './listado-actores/listado-actores.component';
 import { TablaPaisesComponent } from '../componentes/tabla-paises/tabla-paises.component';
 import { ShareModule } from '../share/share.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -17,7 +18,8 @@ import { ShareModule } from '../share/share.module';
   imports: [
     CommonModule,
     ActoresRoutingModule,
-    ShareModule
+    ShareModule,
+    ReactiveFormsModule
   ]
 })
 export class ActoresModule { }
