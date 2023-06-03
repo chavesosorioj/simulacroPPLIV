@@ -3,13 +3,15 @@ import { Actor } from '../clases/actor';
 import { addDoc, collection, collectionData, Firestore, getDoc,
   getDocs, updateDoc, deleteDoc, doc, setDoc, CollectionReference } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ActoresService {
 
-  constructor(private firestore: Firestore) { }
+  constructor(private firestore: Firestore,
+              private toastr: ToastrService) { }
 
   getActores(): Observable<Actor[]>{
     const col = collection(this.firestore, 'actores');
@@ -29,6 +31,7 @@ export class ActoresService {
       })
       .then((docRef) => {
         console.log('Actor agregado con ID:', docRef.id);
+        this.toastr.success('actor guardado con exito');
       })
       .catch((error) => {
         console.error('Error al agregar actor:', error);

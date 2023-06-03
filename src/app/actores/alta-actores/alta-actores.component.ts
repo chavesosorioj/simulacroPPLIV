@@ -3,6 +3,7 @@ import { Actor } from 'src/app/clases/actor';
 import { ActoresService } from 'src/app/servicios/actores.service';
 import { Pais } from 'src/app/clases/pais';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class AltaActoresComponent implements OnInit {
   // auxActor:any|Actor;
   formAlta: FormGroup;
 
-  constructor(private dbActor:ActoresService,
+  constructor(public dbActor:ActoresService,
               private formBuilder: FormBuilder) {
     this.formAlta = this.formBuilder.group({
       nombre: ['',[ Validators.required, Validators.minLength(4)]],
@@ -47,6 +48,7 @@ export class AltaActoresComponent implements OnInit {
       this.datosPais.nombre);
 
       this.dbActor.guardarActor(auxActor);
+
   }
 }
 
