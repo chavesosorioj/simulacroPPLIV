@@ -22,6 +22,9 @@ export class ActoresService {
 
     const docRef = addDoc(col, {
         nombre: actor.nombre,
+        apellido: actor.apellido,
+        ciudad: actor.ciudad,
+        mail: actor.mail,
         pais: actor.pais
       })
       .then((docRef) => {
@@ -37,6 +40,9 @@ export class ActoresService {
     const documento = doc(collection(this.firestore, 'actores'), id);
     updateDoc(documento, {
       'nombre': actor.nombre,
+      'apellido': actor.apellido,
+      'ciudad': actor.ciudad,
+      'mail': actor.mail,
       'pais': actor.pais,
     });
     //mod los datos especificos

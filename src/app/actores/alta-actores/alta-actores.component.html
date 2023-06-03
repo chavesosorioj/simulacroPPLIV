@@ -9,7 +9,7 @@
     <div class="col-md-6">
       <form class="row g-3 needs-validation" [formGroup]="formAlta" (ngSubmit)="submitForm()" novalidate>
 
-        <div class="col-md-6">
+        <div class="col-md-7">
           <label for="validationCustom01" class="form-label">Nombre</label>
           <input type="text" class="form-control" formControlName="nombre">
           <span *ngIf="formAlta.get('nombre')?.hasError('required') && formAlta.get('nombre')?.touched" class="text-danger">
@@ -20,7 +20,7 @@
           </span>
 
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
           <label for="validationCustom02" class="form-label">Apellido</label>
           <input type="text" class="form-control" formControlName="apellido">
           <span *ngIf="formAlta.get('apellido')?.hasError('required') && formAlta.get('apellido')?.touched" class="text-danger">
@@ -30,7 +30,7 @@
             Apellido como minimo debe tener 4 caracteres
         </span>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-7">
           <label for="validationCustom03" class="form-label">Ciudad</label>
           <input type="text" class="form-control" formControlName="ciudad">
           <span *ngIf="formAlta.get('ciudad')?.hasError('required') && formAlta.get('ciudad')?.touched" class="text-danger">
@@ -38,7 +38,7 @@
           </span>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-md-7">
             <label for="validationCustomUsername" class="form-label">Mail</label>
             <div class="input-group has-validation">
               <span class="input-group-text" id="inputGroupPrepend">@</span>
@@ -52,28 +52,16 @@
 
             </div>
         </div>
-        <div class="col-md-6">
-          <label for="validationCustom03" class="form-label">Pais</label>
+        <div class="col-md-7">
+          <label for="validationCustom03" class="form-label">Pais (seleccione el pais de la lista)</label>
           <div *ngIf="datosPais">
-            <p>{{datosPais.nombre}}</p>
-            <!-- <input type="text" {{datosPais.nombre}}> -->
+            <p class="p-input">{{datosPais.nombre}}</p>
           </div>
-          <div class="invalid-feedback">
-            Please provide a valid city.
-          </div>
+          <span *ngIf=" formAlta.get('nombre')?.touched &&  formAlta.get('apellido')?.touched
+                  && formAlta.get('ciudad')?.touched &&  formAlta.get('mail')?.touched && !datosPais" class="text-danger">
+            Debe seleccionar un Pais.
+          </span>
         </div>
-        <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-            <label class="form-check-label" for="invalidCheck">
-              Agree to terms and conditions
-            </label>
-            <div class="invalid-feedback">
-              You must agree before submitting.
-            </div>
-          </div>
-        </div>
-
         <div class="col-12">
           <button class="btn btn-primary" type="submit">Submit form</button>
           <!-- [disabled]="formAlta.invalid" -->
@@ -90,4 +78,4 @@
     </div>
 
 
-<!-- <app-footer></app-footer> -->
+<app-footer></app-footer>

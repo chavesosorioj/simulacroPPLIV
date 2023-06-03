@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Actor } from 'src/app/clases/actor';
 import { ActoresService } from 'src/app/servicios/actores.service';
 import { Pais } from 'src/app/clases/pais';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -13,10 +13,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 export class AltaActoresComponent implements OnInit {
 
   datosPais:any|Pais;
-  newActor:any|Actor;
+  // auxActor:any|Actor;
   formAlta: FormGroup;
 
-  constructor(private actorService:ActoresService,
+  constructor(private dbActor:ActoresService,
               private formBuilder: FormBuilder) {
     this.formAlta = this.formBuilder.group({
       nombre: ['',[ Validators.required, Validators.minLength(4)]],
@@ -32,7 +32,6 @@ export class AltaActoresComponent implements OnInit {
 
 
   mostrarPais(pais:Pais){
-    console.log('lo que llega en pais - parent', pais);
     if(this.datosPais !== Pais){
       this.datosPais = pais;
     }
@@ -40,6 +39,14 @@ export class AltaActoresComponent implements OnInit {
 
   submitForm(){
     console.log(this.formAlta.value);
+     const auxActor = new Actor(
+      this.formAlta.get('nombre')?.value,
+      this.formAlta.get('apellido')?.value,
+      this.formAlta.get('ciudad')?.value,
+      this.formAlta.get('mail')?.value,
+      this.datosPais.nombre);
+
+      this.dbActor.guardarActor(auxActor);
   }
 }
 

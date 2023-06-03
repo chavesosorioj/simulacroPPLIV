@@ -1,12 +1,16 @@
 export class Actor {
 
-    id:string;
     nombre: string;
+    apellido:string;
+    ciudad:string;
+    mail:string;
     pais:string;
 
-    constructor(id:string, nombre:string, pais:string){
-        this.id = id;
+    constructor(nombre:string, apellido:string, ciudad:string, mail:string, pais:string){
         this.nombre = nombre;
+        this.apellido = apellido,
+        this.ciudad =ciudad,
+        this.mail = mail,
         this.pais = pais;
     }
 
