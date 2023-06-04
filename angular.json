@@ -112,5 +112,7 @@
       }
     }
   },
-  "defaultProject": "primerParcialPractica"
+  "cli": {
+    "analytics": false
+  }
 }

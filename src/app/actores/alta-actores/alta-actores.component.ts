@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Actor } from 'src/app/clases/actor';
 import { ActoresService } from 'src/app/servicios/actores.service';
 import { Pais } from 'src/app/clases/pais';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { ToastrService } from 'ngx-toastr';
 
 
@@ -15,10 +15,10 @@ export class AltaActoresComponent implements OnInit {
 
   datosPais:any|Pais;
   // auxActor:any|Actor;
-  formAlta: FormGroup;
+  formAlta: UntypedFormGroup;
 
-  constructor(public dbActor:ActoresService,
-              private formBuilder: FormBuilder) {
+  constructor(public dbActor: ActoresService,
+              private formBuilder: UntypedFormBuilder) {
     this.formAlta = this.formBuilder.group({
       nombre: ['',[ Validators.required, Validators.minLength(4)]],
       apellido: ['',[ Validators.required, Validators.minLength(4)]],
@@ -48,7 +48,15 @@ export class AltaActoresComponent implements OnInit {
       this.datosPais.nombre);
 
       this.dbActor.guardarActor(auxActor);
+      // this.showMessage();
+
+
 
   }
+
+  // showMessage(): void {
+  //   this.toastr.success('Mensaje de éxito', 'Título');
+  // }
+  
 }
 
