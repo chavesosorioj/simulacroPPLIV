@@ -1,8 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { PaisesService } from 'src/app/servicios/paises.service';
 import { Pais } from 'src/app/clases/pais';
-import { collectionSnapshots } from '@angular/fire/firestore';
-
+import { collectionSnapshots } from '@angular/fire/firestore'; // esto creo que se puso automaticamente cuando updatee angular
 @Component({
   selector: 'app-tabla-paises',
   templateUrl: './tabla-paises.component.html',

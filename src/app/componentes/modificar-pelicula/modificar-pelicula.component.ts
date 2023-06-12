@@ -1,6 +1,8 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Pelicula } from 'src/app/clases/pelicula';
 
+
+
 @Component({
   selector: 'app-modificar-pelicula',
   templateUrl: './modificar-pelicula.component.html',

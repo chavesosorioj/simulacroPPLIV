@@ -4,6 +4,7 @@ import { Pelicula } from 'src/app/clases/pelicula';
 import { EventEmitter, Output } from '@angular/core';
 import { TablaPeliculaComponent } from 'src/app/componentes/tabla-pelicula/tabla-pelicula.component';
 
+
 @Component({
   selector: 'app-listado-peliculas',
   templateUrl: './listado-peliculas.component.html',

@@ -46,6 +46,7 @@ export class ActoresService {
       'pais': actor.pais,
     });
     //mod los datos especificos
+    
   }
 
   eliminarActor(id: string){

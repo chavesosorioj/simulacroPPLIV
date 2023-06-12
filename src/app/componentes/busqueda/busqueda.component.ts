@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Pelicula } from 'src/app/clases/pelicula';
 import { PeliculaService } from 'src/app/servicios/pelicula.service';
 
+
+
 @Component({
   selector: 'app-busqueda',
   templateUrl: './busqueda.component.html',

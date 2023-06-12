@@ -1,20 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { AltaActoresComponent } from './alta-actores/alta-actores.component';
-import { ListadoActoresComponent } from './listado-actores/listado-actores.component';
+import { AltaPeliculasComponent } from './alta-peliculas/alta-peliculas.component';
+import { ListadoPeliculasComponent } from './listado-peliculas/listado-peliculas.component';
 import { BienvenidoComponent } from '../componentes/bienvenido/bienvenido.component';
 
 
+
 const routes: Routes = [
-  {path: 'listado-actores', component:ListadoActoresComponent},
-  {path: 'alta-actores', component:AltaActoresComponent},
+  {path: 'listado-peliculas', component:ListadoPeliculasComponent},
+  {path: 'alta-peliculas', component:AltaPeliculasComponent},
   {path: '**', component:BienvenidoComponent} 
 ]
-
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ActoresRoutingModule { }
+export class PeliculasRoutingModule { }
